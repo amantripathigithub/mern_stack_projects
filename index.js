@@ -4,16 +4,19 @@ const mongoose = require('mongoose');
 
 
 const express = require('express');
+
 const app = express();
 
-dotenv.config({path: './config.env'})
+dotenv.config({path: './config.env'});
 
-const DB = process.env.DATABASE;
-mongoose.connect(DB).then(()=>{
-    console.log("ban gya");
-}).catch((err)=>{
-    console.log("nhib  hua");
-});
+
+const PORT = process.env.PORT;
+
+require('./db/connection');
+
+
+
+
 
 
 // middleware
@@ -44,6 +47,7 @@ app.get('/signup',(req,res) =>{
 })
 
 
-app.listen(3000, () => {
-    console.log('server is running at port 3000');
+
+app.listen(PORT, () => {
+    console.log('server is running at port '+ PORT);
 })
