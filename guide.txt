@@ -1,0 +1,4 @@
+npm init
+adding some dependencies:
+npm i nodemon-(i is for install)
+// here nodemon is responsible for checking on that if any changes are in any file then it restarts the application itself to make the changes..
