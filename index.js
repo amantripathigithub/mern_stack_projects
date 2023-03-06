@@ -15,6 +15,10 @@ const PORT = process.env.PORT;
 require('./db/connection');
 
 
+app.use(require('./router/auth'));
+
+
+const User = require('./model/userSchema');
 
 
 
@@ -29,9 +33,9 @@ const middleware = (req,res, next ) =>{
 
 
 
-app.get('/', (req,res) => {
-    res.send('heeeeeeeeeeeolo');
-});
+// app.get('/', (req,res) => {
+//     res.send('heeeeeeeeeeeolo');
+// });
 
 app.get('/about',middleware, (req,res) => {
     res.send('about page');
